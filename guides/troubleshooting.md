@@ -182,9 +182,8 @@ endif
 Mods for 3.2 can be either auto fixed, fixed by the mod author or you can fix them yourself manually. To do the last one proceed as such:
 Finding `Position` or `Blend` override section, by its hash or name, and add `;` at the beginning of each line, so it should look like that:
 
-Converting `Position` to `Blend` sections can be done by the script with the `-sbp` flag, in CLI.
 
-Alternatively, you can do it manually, by finding `Position` override section, by its hash or name, and add `;` at the beginning of each line, so it should look like that:
+You can do it manually, by finding `Position` override section, by its hash or name, and add `;` at the beginning of each line, so it should look like that:
 
 ```ini
 ;[TextureOverrideMydeiBodyPosition]
@@ -196,9 +195,6 @@ Alternatively, you can do it manually, by finding `Position` override section, b
 ```
 
 Then you need to add few `Resource` sections at the bottom of file, usually `Position` `stride` is `40` and `Blend` `stride` is `32`, to check it, you can find existent `ResourceMydeiBodyPosition` & `ResourceMydeiBodyPosition` sections
-
-Then you need to add few `Resource` sections at the bottom of file, and create `Constants` section, or add to existent, `$_blend_` variable. usually `Position` `stride` is `40` and `Blend` `stride` is `32`, to check it, you can find existent `ResourceMydeiBodyPosition` & `ResourceMydeiBodyPosition` sections.
-Value for `array` parameter you can calculate by yourself, look at position `.buf` file `size`, not "on disk", and divide it by Position `stride`, for example `2161720 / 40` = `54043`.
 
 ```ini
 [ResourceMydeiBodyPositionCS]
